@@ -1,7 +1,7 @@
 import discord
 from discord import utils
 
-t = 'TOKEN'
+t = 'TOKEN' # Token для бота
 
 POST_ID = 000000000000000000  # Заменить на id будушего поста
 
