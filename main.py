@@ -1,7 +1,7 @@
 import discord
 from discord import utils
 
-t = 'NjYzODA0NjQ5NTQ3MjM1MzM4.XhOIPQ.sbk-ho3m13P7jfxSTacBeOgx_j8'
+t = 'TOKEN'
 
 POST_ID = 000000000000000000  # Заменить на id будушего поста
 
