@@ -32,11 +32,11 @@ class Bot(discord.Client):
 		if message.id == POST_ID:
 			s = payload.emoji.name
 			r = utils.get(message.guild.roles, id=DATA[s])
-			if r != None and [i for i in mem.roles if i not in EXCROLES] < 5:
+			if r != None and len([i for i in mem.roles if i not in EXCROLES]) < 5:
 				await mem.add_roles( r )
 				print("[Add Role] {0.name} for {1.display_name}".format(r, mem))
 			else:
-				print("[Error] Role {.name} hasn't been added".format(r))	
+				print("[Error] Role hasn't been added")	
 
 	async def on_raw_reaction_remove(self, payload):
 		message = await utils.get(utils.get(self.guilds, id=payload.guild_id).text_channels, id=payload.channel_id ).fetch_message(payload.message_id)
@@ -49,7 +49,7 @@ class Bot(discord.Client):
 				await mem.remove_roles(r)
 				print("[Rem Role] {0.name} for {1.display_name}".format(r, mem))
 			else:
-				print("[Error Role] can't remove role {0.name} for {1.display_name}".format(r, mem))		
+				print("[Error Role] can't remove role for {.display_name}".format(mem))		
 
 
 	async def on_ready(self):
