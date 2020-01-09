@@ -24,7 +24,7 @@ DATA = {
 
 EXCROLES = [658331716250763284, 658463445783674893, 659854388671545374, 658635192306630658, 658334122028040223] 
 
-class Pedro_bot(discord.Client):
+class Bot(discord.Client):
 	async def on_raw_reaction_add(self, payload):
 		message = await utils.get(utils.get(self.guilds, id=payload.guild_id).text_channels, id=payload.channel_id ).fetch_message(payload.message_id)
 		mem = utils.get(message.guild.members, id=payload.user_id)
@@ -56,5 +56,5 @@ class Pedro_bot(discord.Client):
 		print("[Log] READY")	
 
 if __name__ == '__main__':
-	c = Pedro_bot()
+	c = Bot()
 	c.run(t)
