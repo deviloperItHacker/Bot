@@ -32,7 +32,7 @@ class Bot(discord.Client):
 		if message.id == POST_ID:
 			s = payload.emoji.name
 			r = utils.get(message.guild.roles, id=DATA[s])
-			if r != None and len([i for i in mem.roles if i not in EXCROLES]) < 5:
+			if r != None and len([i for i in mem.roles if i.id not in EXCROLES]) < 5:
 				await mem.add_roles( r )
 				print("[Add Role] {0.name} for {1.display_name}".format(r, mem))
 			else:
